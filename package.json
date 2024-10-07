@@ -4,7 +4,7 @@
   "description": "Better & Sortable File Explorer for VSCode",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.92.0"
+    "vscode": "^1.91.0"
   },
   "categories": [
     "Other"
@@ -12,10 +12,24 @@
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
+    "views": {
+      "explorer": [
+        {
+          "id": "sortableExplorer",
+          "name": "Sortable Explorer"
+        }
+      ]
+    },
     "commands": [
       {
-        "command": "sortable-explorer.helloWorld",
-        "title": "Hello World"
+        "command": "sortableExplorer.refresh",
+        "title": "Refresh Sortable Explorer"
+      },
+      {
+        "command": "sortableExplorer.openFile",
+        "title": "Open File",
+        "category": "Sortable Explorer",
+        "icon": "$(edit)"
       }
     ]
   },
@@ -31,7 +45,7 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.92.0",
+    "@types/vscode": "^1.91.0",
     "@types/mocha": "^10.0.7",
     "@types/node": "20.x",
     "@typescript-eslint/eslint-plugin": "^7.14.1",
